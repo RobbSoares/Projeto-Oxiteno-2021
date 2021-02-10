@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de ADM</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styleAdm.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <style>
+        .statusNegativo{
+            background-color: red;
+            color: #fff;
+        }
+        .statusPositivo{
+            background-color: rgb(4, 192, 4);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="img--wrapper">
+            <img src="../assets/oxiteno-logo.png" alt="">
+        </div>
+
+        <div class="logout">
+            <a href="../paginaLogin/index.html">Sair <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="filtro">
+            <div class="urgencia estilo">
+                <label>Urgência</label> 
+                <select id="selectTempo" onchange="mudarOrdem()">
+                    <option>Selecione a ordem</option>
+                    <option>Mais recentes</option>
+                    <option>Mais antigos</option>  
+                </select>
+            </div>
+
+
+
+            <div class="gerencia estilo">
+                <label>Gerência</label>
+                <select id="selectGerencia" onchange="mudarSelecao()">
+                    <option value="">Selecione a Gerencia</option>
+                    <option value="Restaurante">Restaurante</option>
+                    <option value="Limpeza">Limpeza</option>
+                    <option value="Jardinagem">Jardinagem</option>
+                    <option value="Segurança Patrimonial">Segurança Patrimonial</option>
+                    <option value="Recepção">Recepção</option>
+                    <option value="Malote & Correspodências">Malote & Correspodências</option>
+                    <option value="Controle de pragas">Controle de pragas</option>
+                    <option value="Máquina de snacks">Máquina de snacks</option>
+                    <option value="Máquina de bebidas quentes">Máquina de bebidas quentes</option>
+                    <option value="Estacionamento">Estacionamento</option>
+                    <option value="Transporte de turno">Transporte de turno</option>
+                    <option value="Transporte Administrativo">Transporte Administrativo</option>
+                    <option value="Frota de veículos - pool">Frota de veículos - pool</option>
+                    <option value="PAB - Itaú">PAB - Itaú</option>
+                    <option value="Elevador P&D">Elevador P&D</option>
+                </select>
+            </div>
+
+            <div class="ger_urg estilo">
+                <label>Status</label>
+                <select id="selectStatus" onchange="mudarSelecaoStatus()">
+                    <option value="">Selecione a Gerencia</option>
+                    <option>Chamados Abertos</option>
+                    <option>Chamados Fechados</option>
+                    <option></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="tabela-chamados">
+                
+                <div class="containerSLA">
+                    <a href="../paginaSLA/index.html">Alterar SLA</a>
+                </div>
+
+                <table>
+                    <thead id="dados-tabela">
+                        <tr>
+                            <th>Código do Chamado</th>
+                            <th>Processo</th>
+                            <th>Gerencia</th>
+                            <th>SLA</th>
+                            <th>Data de vencimento</th>
+                            <th>Status</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody" class="tbody">
+                        <!--
+                        <tr>
+                            <td>Elogios</td>
+                            <td>10/02/2021</td>
+                            <td>Facilities</td>
+                            <td>15/02/2021</td>
+                        </tr>
+                        <tr>
+                            <td>Reclamação</td>
+                            <td>10/02/2021</td>
+                            <td>Facilities</td>
+                            <td>15/02/2021</td>
+                        </tr>
+                        <tr>
+                            <td>Abastecimento de insumos</td>
+                            <td>10/02/2021</td>
+                            <td>Limpeza</td>
+                            <td>15/02/2021</td>
+                        </tr>
+                        <tr>
+                            <td>Limpeza de vidros</td>
+                            <td>10/02/2021</td>
+                            <td>Limpeza</td>
+                            <td>15/02/2021</td>
+                        </tr>
+                        <tr>
+                            <td>Solicitações</td>
+                            <td>10/02/2021</td>
+                            <td>Malote / Correspodências</td>
+                            <td>15/02/2021</td>
+                        </tr>
+                        <tr>
+                            <td>Reserva para vaga de visitantes</td>
+                            <td>10/02/2021</td>
+                            <td>Estacionamento</td>
+                            <td>15/02/2021</td>
+                        </tr>-->
+
+                    </tbody>
+                </table>
+                <div class="modal" id="modal--box" style="display: none;">
+                    <div id="abrirModal" class="modal">
+                        <a href="#fechar" title="Fechar" class="fechar">x</a>
+                        <h2>Detalhes do chamado</h2>
+                        <p id="1">Numero do chamado: ${el.numChamado}</p>
+                        <p id="2">Processo: ${el.processo}</p>
+                        <p id="3">Gerencia: ${el.gerencia}</p>
+                        <p id="4">SLA: ${el.sla} Horas</p>
+                        <p id="5">Data de abertura: ${el.dataAbertura}</p>
+                        <p id="6">Data de vencimento: ${el.dataAbertura}</p>
+                        <p id="7">Status do chamado: ${el.statusChamado}</p>
+                        <p id="8">Informações: ${el.detalhesAdicionais}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+<script src="./admApp.js"></script>

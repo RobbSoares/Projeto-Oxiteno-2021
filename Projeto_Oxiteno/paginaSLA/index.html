@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PAB - Itau</title>
+        <link rel="stylesheet" href="../css/css.css">
+        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <header>
+            <img src="../assets/oxiteno-logo.png" alt="">
+        </header>
+
+        <div class="container">
+            <div class="form">
+                <form name="" action="">
+                    <div class="form-nome">
+                        <h2>Alteração de SLA</h2>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gerencia">Gerencia:</label>
+                            <select  class="form-estilo" name="gerencia" id="gerencia" onchange="mudarGerencia()" required>
+                                <option value="">Selecione a Gerencia</option>
+                                <option value="Restaurante">Restaurante</option>
+                                <option value="Limpeza">Limpeza</option>
+                                <option value="Jardinagem">Jardinagem</option>
+                                <option value="Segurança Patrimonial">Segurança Patrimonial</option>
+                                <option value="Recepção">Recepção</option>
+                                <option value="Malote & Correspodências">Malote & Correspodências</option>
+                                <option value="Controle de pragas">Controle de pragas</option>
+                                <option value="Máquina de snacks">Máquina de snacks</option>
+                                <option value="Máquina de bebidas quentes">Máquina de bebidas quentes</option>
+                                <option value="Estacionamento">Estacionamento</option>
+                                <option value="Transporte de turno">Transporte de turno</option>
+                                <option value="Transporte Administrativo">Transporte Administrativo</option>
+                                <option value="Frota de veículos - pool">Frota de veículos - pool</option>
+                                <option value="PAB - Itaú">PAB - Itaú</option>
+                                <option value="Elevador P&D">Elevador P&D</option>
+                            </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="sla">Processo</label>
+                        <select  class="form-estilo" name="gerencia" id="gerencia" onchange="mudarGerencia()" required></select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="sla">Tempo de SLA</label>
+                        <input  class="form-estilo" type="text" name="sla" id="sla" required>
+                    </div>
+
+
+                    <div class="botoes">
+                        <a href="../admPage/index.html" class="btn-form" id="btn-voltar">Voltar</a>
+
+                        <a href="#" class="btn-form" id="btn-enviar">Enviar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            window.onload = function(){
+                const URL = 'http://localhost:5000/api/processos';
+                var cmbSLA = document.getElementById('gerencia');
+                let output = '';
+
+                function buscaProcessos(optionSelected){
+                    let selectG = document.querySelector('#gerencia');
+                    fetch(URL)
+                        .then(res => res.json())
+                        .then(data =>{
+                                
+
+                                    obj = [...data].filter((el) =>{
+                                        return el.gerenciaProcesso === optionSelected;
+                                    })
+                        
+                            
+                            obj.forEach(el => {            
+                                    output += `<option>${el.nomeProcesso}</option>`  
+                            }) 
+                            cmbSLA.innerHTML = output;
+                            //md.innerHTML = modal
+                            output = ''; 
+                        });
+                        //tb.innerHTML = output;
+                                    }
+
+
+                function mudarGerencia(){
+                    let optionSelected = cmbSLA.options[cmbSLA.selectedIndex].text
+                    return buscaProcessos(optionSelected)
+                }
+            }
+        </script>
+    </body>
+
+</html>

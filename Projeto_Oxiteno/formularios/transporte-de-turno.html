@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transporte de Turno</title>
+        <link rel="stylesheet" href="../css/css.css">
+        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <header>
+            <img src="../assets/oxiteno-logo.png" alt="">
+        </header>
+
+        <div class="container">
+            <div class="form">
+                <form name="form" action="">
+                    <div class="form-nome">
+                        <h2>Transporte de Turno</h2>
+                    </div>
+                    <div class="bloco-titulo">
+                        <label for="titulo">Título:</label>
+                        <select class="form-estilo" name="titulo" id="titulo">
+                            <option value=""></option>
+                            <option value="cadastro">Cadastro (novo colaborador)</option>
+                            <option value="mudancaturno">Mudança de turno / endereço</option>
+                            <option value="outras">Outras solicitações</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input class="form-estilo" type="email" name="email" id="email" required>
+                    </div>
+
+                    <div class="cadastro">
+                        <label for="nomeCadastro">Nome:</label>
+                        <input class="form-estilo" type="text" name="nomeCadastro" id="nomeCadastro">
+                    </div>
+
+                    <div class="cadastro">
+                        <label for="matriculaCadastro">Matricula</label>
+                        <input class="form-estilo" type="text" name="matriculaCadastro" id="matriculaCadastro">
+                    </div>
+
+                    <div class="cadastro">
+                        <label for="endereçoCadastro">Endereço:</label>
+                        <input class="form-estilo" type="text" name="enderecoCadastro" id="enderecoCadastro">
+                    </div>
+
+                    <div class="cadastro">
+                        <label for="turnoCadastro">Turno:</label>
+                        <select class="form-estilo" name="turnoCadastro" id="turnoCadastro">
+                            <option value="M">Manhã</option>
+                            <option value="T">Tarde</option>
+                            <option value="N">Noite</option>
+                        </select>
+                    </div>
+
+                    <div class="cadastro">
+                        <label for="horarioCadastro">Horário:</label>
+                        <input class="form-estilo" type="text" name="horarioCadastro" id="horarioCadastro">
+                    </div>
+
+                    <div class="cadastro">
+                        <label for="datainicioCadastro">Data Início:</label>
+                        <input class="form-estilo" type="date" name="datainicioCadastro" id="datainicioCadastro">
+                    </div>
+
+                    <div class="mudancaturno">
+                        <label for="nomeMudanca">Nome:</label>
+                        <input class="form-estilo" type="text" name="nomeMudanca" id="nomeMudanca">
+                    </div>
+
+                    <div class="mudancaturno">
+                        <label for="matriculaMudanca">Matricula</label>
+                        <input class="form-estilo" type="text" name="matriculaMudanca" id="matriculaMudanca">
+                    </div>
+
+                    <div class="mudancaturno">
+                        <label for="enderecoMudança">Endereço:</label>
+                        <input class="form-estilo" type="text" name="enderecoMudanca" id="enderecoMudanca">
+                    </div>
+
+                    <div class="mudancaturno">
+                        <label for="turnoMudanca">Turno:</label>
+                        <select class="form-estilo" name="turnoMudanca" id="turnoMudanca">
+                            <option value="M">Manhã</option>
+                            <option value="T">Tarde</option>
+                            <option value="N">Noite</option>
+                        </select>
+                    </div>
+
+                    <div class="mudancaturno">
+                        <label for="horarioMudanca">Horário:</label>
+                        <input class="form-estilo" type="text" name="horarioMudanca" id="horarioMudanca">
+                    </div>
+
+                    <div class="mudancaturno">
+                        <label for="datainicioMudanca">Data Início:</label>
+                        <input class="form-estilo" type="date" name="datainicioMudança" id="datainicioMudanca">
+                    </div>
+
+                    <div class="mudancaturno">
+                        <label for="dataterminoMudanca">Data Término:</label>
+                        <input class="form-estilo" type="date" name="dataterminoMudanca" id="dataterminoMudanca">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="local">Localização:</label>
+                        <select class="form-estilo" name="localizacao" id="local" required>
+                            <option value=""></option>
+                            <option value="predio">Prédio</option>
+                            <option value="sedecampinas">CSC Sede Campinas</option>
+                            <option value="ernestoigel">Ed.Ernesto Igel</option>
+                            <option value="margaridaigel">Ed. Margarida Igel</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="andar">Andar:</label>
+                        <select class="form-estilo" name="andar" id="andar" required>
+                            <option value=""></option>
+                            <option value="T">Térreo</option>
+                            <option value="1">1º andar</option>
+                            <option value="2">2º andar</option>
+                            <option value="3">3º andar</option>
+                            <option value="4">4º andar</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="input-group" for="chamado">Detalhe a solicitação </label>
+                        <textarea class="form-estilo" name="chamado" id="chamado" cols="62" rows="10" required></textarea>
+                    </div>
+
+                    <div class="botoes">
+                        <a href="../paginaInicial/index.html" class="btn-form" id="btn-voltar">Voltar</a>
+
+                        <a href="#" class="btn-form" id="btn-enviar">Enviar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="formJS/transp-turno.js"></script>
+    </body>
+
+</html>

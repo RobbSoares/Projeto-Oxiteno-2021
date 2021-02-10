@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Chamados</title>
+
+    <link rel="stylesheet" href="../css/styleAdm.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <style>
+        .statusNegativo{
+            background-color: red;
+            color: #fff;
+        }
+        .statusPositivo{
+            background-color: rgb(4, 192, 4);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="img--wrapper">
+            <img src="../assets/oxiteno-logo.png" alt="">
+        </div>
+
+        <div class="logout">
+            <a href="../menu/menu.html">Voltar <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="urgencia estilo">
+            <label>Ordenar Por:</label>
+
+            <select id="select" onchange="mudar()">
+                <option>Selecione a ordem</option>
+                <option>Mais recentes</option>
+                <option>Mais antigos</option>
+            </select>
+        </div>
+        <div class="container">
+            <div class="tabela-chamados">
+                <table>
+                    <thead id="dados-tabela">
+                        <tr>
+                            <th>Código do Chamado</th>
+                            <th>Processo</th>
+                            <th>Gerencia</th>
+                            <th>SLA</th>
+                            <th>Data de vencimento</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody" class="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+    const URL_CHAMADOS = 'http://localhost:5000/api/chamados';
+    let cb = document.getElementById('select');
+    let output = '';
+    let obj;
+
+    function busca(optionSelected){
+    let tb = document.querySelector('.tbody');
+    
+    fetch(URL_CHAMADOS)
+        .then(res => res.json())
+        .then(data =>{
+
+
+            if(optionSelected == 'Mais Recentes'){
+                obj = [...data].sort((a,b) =>{
+                    return a.dataAbertura - b.dataAbertura;
+                })
+            }
+            else{
+                obj = [...data].sort((a,b) =>{
+                    return b.dataAbertura - a.dataAbertura;
+                })
+            }
+
+        obj.forEach(el => {
+            let modal;
+            if(el.statusChamado == 'Aberto'){
+                output += `
+                            <tr>
+                                <td>${el.numChamado}</td>
+                                <td>${el.processo}</td>
+                                <td>${el.gerencia}</td>
+                                <td>${el.sla} Horas</td>
+                                <td>${el.dataVencimento}</td>
+                                <td class="statusNegativo">${el.statusChamado}</td>
+                                
+                            </tr>`;
+            }
+            if(el.statusChamado == 'Fechado'){
+                output += `
+                            <tr>
+                                <td>${el.numChamado}</td>
+                                <td>${el.processo}</td>
+                                <td>${el.gerencia}</td>
+                                <td>${el.sla} Horas</td>
+                                <td>${el.dataVencimento}</td>
+                                <td class="statusPositivo">${el.statusChamado}</td>
+                                
+                            </tr>`;
+            }
+        })
+        tb.innerHTML = output;
+        //md.innerHTML = modal
+        output = '';
+    });
+    //tb.innerHTML = output;
+
+}
+
+    function mudar(){
+        let optionSelected = cb.options[cb.selectedIndex].text
+        return busca(optionSelected)
+    }
+
+    
+</script>

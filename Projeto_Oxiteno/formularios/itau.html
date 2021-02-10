@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PAB - Itau</title>
+        <link rel="stylesheet" href="../css/css.css">
+        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <header>
+            <img src="../assets/oxiteno-logo.png" alt="">
+        </header>
+
+        <div class="container">
+            <div class="form">
+                <form name="" action="">
+                    <div class="form-nome">
+                        <h2 id="nomeModal">PAB - Itau</h2>
+                    </div>
+
+                    <div class="bloco-titulo">
+                        <label for="titulo">Título: </label>
+                        <select name="subject" class="form-estilo" id="titulo">
+                            <option></option>
+                            <option>Solicitações em geral</option>
+
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email: </label>
+                        <input type="email" class="form-estilo" name="e-mail" id="email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="local">Local: </label>
+                        <select name="localicao" class="form-estilo" id="local" id="titulo" required>
+                            <option value=""></option>
+                            <option value="predio">Prédio</option>
+                            <option value="sedecampinas">CSC Sede Campinas</option>
+                            <option value="ernestoigel">Ed.Ernesto Igel</option>
+                            <option value="margaridaigel">Ed. Margarida Igel</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="andar">Andar: </label>
+                        <select name="andar" class="form-estilo" id="andar" required>
+                            <option value=""></option>
+                            <option value="T">Térreo</option>
+                            <option value="1">1º andar</option>
+                            <option value="2">2º andar</option>
+                            <option value="3">3º andar</option>
+                            <option value="4">4º andar</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label id="lbl-chamado" for="chamado">Detalhe a solicitação  </label>
+                        <textarea name="chamado" id="chamado" class="form-estilo" cols="20" rows="5"
+                            required></textarea>
+                    </div>
+
+                    <div class="botoes">
+                        <a href="../paginaInicial/index.html" class="btn-form" id="btn-voltar">Voltar</a>
+
+                        <a href="#" class="btn-form" id="btn-enviar">Enviar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="formJS/itau.js"></script>
+    </body>
+
+</html>

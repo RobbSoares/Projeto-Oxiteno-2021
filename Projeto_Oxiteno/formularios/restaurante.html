@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restaurante</title>
+        <link rel="stylesheet" href="../css/css.css">
+        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <img src="../assets/oxiteno-logo.png" alt="">
+        </header>
+
+        <div class="container">
+            <div class="form">
+                <form name = "form"action="">
+                    <div class="form-nome">
+                        <h2>Restaurante</h2>
+                    </div>
+
+                    <div class="bloco-titulo ">
+                        <label for="titulo">Título:</label>
+                        <select  class="form-estilo" name="titulo" id="titulo">
+                            <option value=""></option>
+                            <option value="elogios">Elogios</option>
+                            <option value="reclamacao">Reclamações</option>
+                            <option value="solitacao">Solicitações em geral</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input  class="form-estilo" type="email" name="email" id="email" required>
+                    </div>
+
+                    <div class="input-group">
+                    <label for="local">Localização:</label>
+                        <select  class="form-estilo" name="localizacao" id="local" required>
+                            <option value=""></option>
+                            <option value="predio">Prédio</option>
+                            <option value="sedecampinas">CSC Sede Campinas</option>
+                            <option value="ernestoigel">Ed.Ernesto Igel</option>
+                            <option value="margaridaigel">Ed. Margarida Igel</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                    <label for="andar">Andar:</label>
+                        <select class="form-estilo" name="andar" id="andar" required>
+                            <option value=""></option>
+                            <option value="T">Térreo</option>
+                            <option value="1">1º andar</option>
+                            <option value="2">2º andar</option>
+                            <option value="3">3º andar</option>
+                            <option value="4">4º andar</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="chamado">Detalhe a solicitação </label>
+                        <textarea class="form-estilo" name="chamado" id="chamado" cols="62" rows="10" required></textarea>
+                    </div>
+
+                    <div class="botoes">
+                        <a href="../paginaInicial/index.html" class="btn-form" id="btn-voltar">Voltar</a>
+
+                        <a href="#" class="btn-form" id="btn-enviar">Enviar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="formJS/restaurante.js"></script>
+    </body>
+</html>

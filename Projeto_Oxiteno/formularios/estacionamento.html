@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Estacionamento</title>
+        <link rel="stylesheet" href="../css/css.css">
+        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <img src="../assets/oxiteno-logo.png" alt="">
+        </header>
+
+        <div class="container">
+            <div class="form">
+                <form name = "form"action="">
+                    <div class="form-nome">
+                        <h2>Estacionamento</h2>
+                    </div>
+
+                    <div class="bloco-titulo ">
+                        <label for="titulo">Título:</label>
+                        <select  class="form-estilo" name="titulo" id="titulo">
+                            <option value=""></option>
+                            <option value="liberação">Liberação de entrada de veículo funcionário</option>
+                            <option value="reserva">Reserva para vaga de visitantes</option>
+                            <option value="atualização">Atualização de veículo de funcionário</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input  class="form-estilo" type="email" name="email" id="email" required>
+                    </div>
+
+                    <div class="liberacao">
+                        <label for="nome-motorista">Nome do motorista:</label>
+                        <input  class="form-estilo" type="text" name="nome-motorista" id="nome-motorista">
+                    </div>
+
+                    <div class="liberacao">
+                        <label for="cpf">CPF:</label>
+                        <input  class="form-estilo" type="text" name="cpf" minlength="11" maxlength="11" onblur="return verificarCPF(this.value)" id="cpf" required>
+                    </div>
+
+                    <div class="liberacao">
+                        <label for="dataNascimento">Data de nascimento:</label>
+                        <input  class="form-estilo" type="date" name="dataNascimento" id="dataNascimento">
+                    </div>
+
+                    <div class="reserva">
+                        <label for="estacionamento">Selecione o estacionamento:</label>
+                        <select  class="form-estilo" name="estacionamento" id="estacionamento">
+                            <option value=""></option>
+                            <option value="s1">Subsolo 1</option>
+                            <option value="s2">Subsolo 2</option>
+                            <option value="s3">Subsolo 3</option>
+                        </select>
+                    </div>
+
+                    <div class="reserva">
+                        <label for="qtdvagas">Quantidade de vagas:</label>
+                        <input  class="form-estilo" type="number" name="qtdvagas" id="qtdvagas" max="3">
+                    </div>
+
+                    <div class="reserva">
+                        <label for="nomevisit">Nome do visitante:</label>
+                        <input  class="form-estilo" type="text" name="nomevisit" id="nomevisit">
+                    </div>
+
+                    <div class="reserva">
+                        <label for="cpfvisit">CPF do visitante:</label>
+                        <input  class="form-estilo" type="text" name="cpfvisit" minlength="11" maxlength="11" onblur="return verificarCPF(this.value)" id="cpfvisit" required>
+                    </div>
+
+                    <div class="reserva">
+                        <label for="veiculovisit">Veiculo do visitante:</label>
+                        <input  class="form-estilo" type="text" name="veiculovisit" id="veiculovisit">
+                    </div>
+
+                    <div class="reserva">
+                        <label for="motivoRes">Motivo da reserva:</label>
+                        <input  class="form-estilo" type="text" name="motivoRes" id="motivoRes">
+                    </div>
+
+                    <div class="atualizacao">
+                        <label for="nomeUsuario">Nome:</label>
+                        <input  class="form-estilo" type="text" name="nomeUsuario" id="nomeUsuario">
+                    </div>
+
+                    <div class="atualizacao">
+                        <label for="matricula">Matricula:</label>
+                        <input  class="form-estilo" type="number" name="matricula" id="matricula">
+                    </div>
+
+                    <div class="atualizacao">
+                        <label for="telFixo">Telefone Fixo:</label>
+                        <input  class="form-estilo" type="tel" name="telFixo" id="telFixo">
+                    </div>
+
+                    <div class="atualizacao">
+                        <label for="celular">Celular:</label>
+                        <input  class="form-estilo" type="tel" name="celular" id="celular">
+                    </div>
+
+                    <div class="atualizacao">
+                        <label for="marcaVeiculo">Marca do veículo: </label>
+                        <input  class="form-estilo" type="text" name="marcaVeiculo" id="marcaVeiculo">
+                    </div>
+
+                    <div class="atualizacao">
+                        <label for="placa">Placa:</label>
+                        <input  class="form-estilo" type="text" name="placa" id="placa">
+                    </div>
+
+                    <div class="atualizacao">
+                        <label for="cor">Cor:</label>
+                        <input class="form-estilo" type="text" name="cor" id="cor">
+                    </div>
+
+                    <div class="input-group">
+                    <label for="local">Localização:</label>
+                        <select  class="form-estilo" name="localizacao" id="local" required>
+                            <option value=""></option>
+                            <option value="predio">Prédio</option>
+                            <option value="sedecampinas">CSC Sede Campinas</option>
+                            <option value="ernestoigel">Ed.Ernesto Igel</option>
+                            <option value="margaridaigel">Ed. Margarida Igel</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                    <label for="andar">Andar:</label>
+                        <select class="form-estilo" name="andar" id="andar" required>
+                            <option value=""></option>
+                            <option value="T">Térreo</option>
+                            <option value="1">1º andar</option>
+                            <option value="2">2º andar</option>
+                            <option value="3">3º andar</option>
+                            <option value="4">4º andar</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="chamado">Detalhe a solicitação </label>
+                        <textarea class="form-estilo" name="chamado" id="chamado" cols="62" rows="10" required></textarea>
+                    </div>
+
+                    <div class="botoes">
+                        <a href="../paginaInicial/index.html" class="btn-form" id="btn-voltar">Voltar</a>
+
+                        <a href="#" class="btn-form" id="btn-enviar">Enviar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="formJS/estacionamento.js"></script>
+        <script src="../script/funcoes_cpf.js"></script>
+    </body>
+</html>

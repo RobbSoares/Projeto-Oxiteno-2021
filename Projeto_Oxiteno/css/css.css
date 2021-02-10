@@ -1,0 +1,248 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+
+ /* Formulários - Robson*/
+.cadAtualizacao {
+    display: none;
+}
+
+.segCracha {
+    display: none;
+}
+
+.manutencao-veiculo {
+    display: none;
+}
+
+.reserva-veiculos {
+    display: none;
+}
+
+/* -------------------- */
+
+/* Formulários - Matheus*/
+.cadastro {
+    display: none;
+}
+
+.mudancaturno {
+    display: none;
+}
+
+.liberacao{
+    display: none;
+}
+.reserva{
+    display: none;
+}
+.atualizacao{
+    display: none;
+}
+
+/* -------------------- */
+/* Formulários - Vinicius*/
+
+.lixeiras{
+    display: none;
+}
+.contratacao{
+    display: none;
+}
+
+.motivoSolicitacao{
+    display: none;
+}
+
+.tempoContrato{
+    display: none;
+}
+
+
+/* -------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #00ff1ab4;/*#00FF19;*/
+}
+
+/* .container {
+
+    align-content: center;
+    width: 35%;
+    padding: 40px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+    background: #ffffff;
+
+} */
+
+.container{
+    width: 100%;
+
+    padding: 1rem;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+
+}
+
+header img {
+    display: flex;
+    margin: 1rem;
+
+    background: white;
+    padding: 0.2rem;
+
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.418);
+    height: 50px;
+}
+
+.form {
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 50%;
+    width: 70%;
+
+    background-color:#ffffff;
+    border-radius: 2rem;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.637);
+}
+
+.form h2 {
+    font-size: 26pt;
+    font-weight: 400;
+    text-align: center;
+    margin: 2rem;
+}
+
+.form-estilo {
+
+    padding: 0.2rem;
+}
+
+select, input {
+    width: 100%;
+    border: 4px solid rgba(21, 255, 0, 0.418);
+    border-radius: 4px;
+
+    background: white;
+
+    font-size: 16pt;
+}
+
+select {
+    padding: 0.4rem;
+}
+
+label {
+    font-size: 15pt;
+}
+
+textarea {
+    font-size: 14pt;
+
+    width: 100%;
+    display: block;
+    resize: none;
+
+    border: 4px solid rgba(21, 255, 0, 0.418);
+    border-radius: 10px;
+
+}
+
+.btn-form {
+    display: inline-block;
+
+    margin: 5rem;
+
+    width: 150px;
+
+    border-radius: 15px;
+    border: none;
+    padding: 1rem;
+
+    cursor: pointer;
+
+}
+
+.btn-form:hover {
+    box-shadow: 0 0 8px rgba(7, 66, 228, 0.884);
+}
+
+#btn-voltar {
+    color: white;
+    font-size: 18pt;
+    background-color: #FB475E;
+}
+
+#btn-enviar {
+    font-size: 18pt;
+    background-color: #44EE77;
+}
+
+a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+/**********Toast----------*/
+
+.toast {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    max-width: 400px;
+    padding: 6px;
+    background: #cccccc;
+    color: #333333;
+    font-family: sans-serif;
+    text-align: center;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+  }
+
+  .toast--visible {
+    top: 20px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .toast--success {
+    padding: 2rem;
+    background: #367bd6;
+
+    font-size: 14pt;
+    font-weight: 800;
+
+    border-color: #ffffffd3;
+    color: #ffffff;
+  }
+

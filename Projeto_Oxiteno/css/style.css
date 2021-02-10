@@ -1,0 +1,304 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ---------- Header ---------*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+
+    background: rgba(87, 255, 9, 0.575);
+    border-bottom: 5px solid rgba(31, 168, 54, 0.151);
+
+    height: 100px;
+}
+
+.header img {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 50px;
+
+
+    width: 135px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.logout{
+    font-size: 16pt;
+
+    margin: 35px;
+    margin-right: 80px;
+}
+
+.logout a {
+    color: rgb(0, 0, 0);
+}
+
+.logout a:hover{
+    color: rgb(255, 2, 2);
+    text-decoration: none;
+}
+
+/* --------- Blocos -------------*/
+.container-centro{
+    background-color:white;
+}
+
+.servicos--display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 50px;
+    padding-top: 20px;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+
+}
+
+.card {
+    box-shadow: 0 0 5px rgba(187, 186, 186, 0.356);
+
+    width: 385px;
+
+    color: black;
+    font-size: 13pt;
+
+    display: flex;
+    align-items: center;
+
+    margin-right: 4rem;
+    margin-bottom: 1rem;
+
+    padding: 2.5rem;
+
+    text-decoration: none;
+}
+
+.linkOption {
+    margin: 0;
+}
+
+.card:hover{
+    background: #58f15de3;
+
+    transition: 0.3s;
+
+    text-decoration: none;
+    color: white;
+}
+
+.linkOption:hover{
+    text-decoration: none;
+}
+
+/* -------- Modal --------*/
+
+.modal-form {
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: opacity 250ms ease-in;
+    -moz-transition: opacity 250ms ease-in;
+    transition: opacity 250ms ease-in;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-form.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-form--box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3rem;
+
+
+    max-width: 45%;
+
+    background-color:#b3f1bb;
+    border-radius: 1rem;
+
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.452);
+}
+
+
+.modal-form--box div {
+    margin: 20px;
+}
+
+.modal {
+    background: #F0F2F5;
+    padding: 2.4rem;
+
+    position: relative;
+}
+
+/* ------- Form -------*/
+
+.form-nome h2 {
+    text-align: center;
+    font-weight: 400;
+    margin-top: -50px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 15pt;
+    font-weight: 400;
+}
+
+textarea {
+    width: 80%;
+    resize: none !important;
+}
+
+#email {
+    width: 48%;
+    background: white;
+}
+
+.form-estilo {
+    margin-left: 0.8rem;
+    border-radius: 0.2rem;
+    border: none;
+    background: white;
+    outline-color: rgb(65, 219, 85);
+}
+
+#titulo {
+    width: 30%;
+    cursor: pointer;
+}
+
+#andar {
+    width: 30%;
+    margin-left: 0.4rem;
+    cursor: pointer;
+    display: inline;
+}
+
+select [name=localizacao] {
+    margin-left: 1rem;
+    display: inline;
+}
+
+#local {
+    margin-left: 0.9rem;
+    cursor: pointer;
+    width: 30%;
+}
+
+.btn-form {
+    display: inline-block;
+
+    margin: 1rem;
+
+    width: 150px;
+
+    border-radius: 4px;
+    border: none;
+    padding: 0.7rem;
+
+    font-size: 12pt;
+}
+
+.btn-form:hover {
+    box-shadow: 0 0 8px rgba(7, 66, 228, 0.884);
+}
+
+#btn-cancel {
+    color: white;
+    margin-top: 2rem;
+    font-size: 13pt;
+    background-color: #FB475E;
+}
+
+#btn-enviar {
+    font-size: 13pt;
+    background-color: #44EE77;
+}
+
+#lbl-chamado {
+    margin-right: 2px;
+}
+
+/* -------- Footer ----------*/
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: black;
+    opacity: 0.8;
+}
+
+/**********Toast----------*/
+
+.toast {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    max-width: 400px;
+    padding: 6px;
+    background: #cccccc;
+    color: #333333;
+    font-family: sans-serif;
+    text-align: center;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+  }
+
+  .toast--visible {
+    top: 20px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .toast--success {
+    padding: 1rem;
+    background: #003cff67;
+    border-color: #ffffffd3;
+    color: #ffffff;
+  }
+
+
+
+
